@@ -2,200 +2,253 @@ body {
 	background-color: white;
 	padding: 0px;
 	border-collapse: collapse;
-	margin: 0;
+	margin: 0px;
 }
-a:link {
-	text-decoration: none;
-	font-size: 18px;
-	font-family: Arial;
-	color: red;
-}
-a:visited {
-	text-decoration: none;
-	font-size: 20px;
-	font-family: Arial;
-	color: red;
-}
-a:hover, a:active {
-	text-decoration: underline;
-	font-size: 20px;
-	font-family: Georgia;
-	background-color: black;
-	color: red;
-}
-
-
-
-
-
-@media only screen and (min-width: 130vh) {
-	.dHeader {
-		z-index: 2;
-		position: absolute;
-		background-color: pink;
-		height: 14vw;
-		width: 65vw;
-		top: 2vh;
-		left: 2vw;
-	}}
-@media only screen and (min-width: 130vh) {
-	.headerIMG {
-		position: absolute;
-		height: 100%;
-		width: 100%;
-	}}
-@media only screen and (min-width: 130vh) {
-	.dFace {
-		z-index: 2;
-		position: absolute;
-		background-color: black;
-		height: 38.5vw;
-		width: 29vw;
-		top: 2vh;
-		left: 68vw;
-	}}
-@media only screen and (min-width: 130vh) {
-	.FaceIMG {
-		position: relative;
-		width: 100%;
-		cursor: pointer;
-	}}
-@media only screen and (min-width: 130vh) {
-	.FaceIMG2 {
-		position: relative;
-		width: 75%;
-		height: 10%;
-		top: 1%;
-		left: 12.5%;
-		cursor: pointer;
-	}}
-@media only screen and (min-width: 130vh) {
-	.dGal {
-		z-index: 2;
-		position: absolute;
-		background-color: none;
-		height: 40vw;
-		width: 29vw;
-		top: calc(38.5vw + 6vh);
-		left: 68vw;
-	}
-}
-@media only screen and (min-width: 130vh) {
-	.dLinks {
-		z-index: 2;
-		position: absolute;
-		background-color: none;
-		height: 100vw;
-		width: 65vw;
-		top: calc(14vw + 4vh);
-		left: 2vw;
+@media only screen and (max-width: 130vh) {
+	a:link {
+		text-decoration: none;
+		font-size: 4vw;
 		font-family: Arial;
-		font-size: 18px;
-		color: black;
-		padding: 0px;
+		color: red;
 	}
-}
-@media only screen and (min-width: 130vh) {
-	.thumb {
-		position: relative;
-		display: block;
-		width: 100%;
-		cursor: pointer;
-	}}
 
-@media only screen and (min-width: 130vh) {
-	.fnGIF {
-		display: block;
-		z-index: -1;
-		position: fixed;
-		width: 10vh;
-		bottom: 0;
-		left: 0vw;
-	}
-}
-
-
-
-
-
-@media only screen and (max-width: 130vh) {
-	.dHeader {
-		z-index: 2;
-		position: absolute;
-		background-color: white;
-		height: 20vw;
-		width: 96vw;
-		top: 2vh;
-		left: 2vw;
-	}}
-@media only screen and (max-width: 130vh) {
-	.headerIMG {
-		position: relative;
-		height: 100%;
-		width: 100%;
-	}}
-@media only screen and (max-width: 130vh) {
-	.dFace {
-		z-index: 2;
-		position: absolute;
-		background-color: black;
-		height: 60vw;
-		width: 40vw;
-		top: calc(20vw + 4vh);
-		left: 58vw;
-	}}
-@media only screen and (max-width: 130vh) {
-	.FaceIMG {
-		position: relative;
-		width: 100%;
-		cursor: pointer;
-	}}
-@media only screen and (max-width: 130vh) {
-	.FaceIMG2 {
-		position: relative;
-		width: 90%;
-		top: 5%;
-		left: 5%;
-		cursor: pointer;
-	}}
-@media only screen and (max-width: 130vh) {
-	.dLinks {
-		z-index: 2;
-		position: absolute;
-		background-color: none;
-		height: 100vw;
-		width: 54vw;
-		top: calc(20vw + 4vh);
-		left: 2vw;
+	a:visited {
+		text-decoration: none;
+		font-size: 4vw;
 		font-family: Arial;
-		font-size: 18px;
-		color: black;
-		padding: 0px;
+		color: red;
+	}
+
+	a:hover, a:active {
+		text-decoration: underline;
+		font-size: 4vw;
+		font-family: Georgia;
+		background-color: black;
+		color: red;
 	}
 }
-@media only screen and (max-width: 130vh) {
-	.dGal {
-		z-index: 2;
-		position: absolute;
-		background-color: none;
-		height: 40vw;
-		width: 40vw;
-		top: calc(80vw + 6vh);
-		left: 58vw;
-	}}
-@media only screen and (max-width: 130vh) {
-	.thumb {
-		position: relative;
-		display: block;
-		max-width: 100%;
-		cursor: pointer;
+@media only screen and (min-width: 130vh) {
+	a:link {
+		text-decoration: none;
+		font-size: 18px;
+		font-family: Arial;
+		color: red;
+	}
 
-	}}
-@media only screen and (max-width: 130vh) {
-	.fnGIF {
-		display: block;
-		z-index: -1;
-		position: fixed;
-		width: 40vw;
-		bottom: 0;
-	}}
+	a:visited {
+		text-decoration: none;
+		font-size: 18px;
+		font-family: Arial;
+		color: red;
+	}
+
+	a:hover, a:active {
+		text-decoration: underline;
+		font-size: 18px;
+		font-family: Georgia;
+		background-color: black;
+		color: red;
+	}
+}
+
+
+
+	@media only screen and (min-width: 130vh) {
+		.dHeader {
+			z-index: 2;
+			position: absolute;
+			background-color: pink;
+			height: 14vw;
+			width: 67vw;
+			top: 2vh;
+			left: 2vw;
+		}
+	}
+
+	@media only screen and (min-width: 130vh) {
+		.headerIMG {
+			position: absolute;
+			height: 100%;
+			width: 100%;
+		}
+	}
+
+	@media only screen and (min-width: 130vh) {
+		.dFace {
+			z-index: 2;
+			position: absolute;
+			background-color: black;
+			height: 38.5vw;
+			width: 27vw;
+			top: 2vh;
+			left: 70vw;
+		}
+	}
+
+	@media only screen and (min-width: 130vh) {
+		.FaceIMG {
+			position: relative;
+			width: 100%;
+			cursor: pointer;
+		}
+	}
+
+	@media only screen and (min-width: 130vh) {
+		.FaceIMG2 {
+			position: relative;
+			width: 75%;
+			height: 10%;
+			top: 1%;
+			left: 12.5%;
+			cursor: pointer;
+		}
+	}
+
+	@media only screen and (min-width: 130vh) {
+		.dGal {
+			z-index: 2;
+			position: absolute;
+			background-color: none;
+			height: 40vw;
+			width: 14vw;
+			top: calc(14vw + 4vh);
+			left: 55vw;
+		}
+	}
+
+	@media only screen and (min-width: 130vh) {
+		.dLinks {
+			z-index: 2;
+			position: absolute;
+			background-color: none;
+			height: 50vw;
+			width: 52vw;
+			top: calc(14vw + 4vh);
+			left: 2vw;
+			font-family: Arial;
+			font-size: 18px;
+			color: black;
+			padding: 0px;
+		}
+	}
+
+	@media only screen and (min-width: 130vh) {
+		.thumb {
+			position: relative;
+			display: block;
+			width: 100%;
+			cursor: pointer;
+		}
+	}
+
+	@media only screen and (min-width: 130vh) {
+		.fnGIF {
+			display: block;
+			z-index: 4;
+			position: fixed;
+			width: 30vh;
+			bottom: 0;
+			right: 0vw;
+		}
+	}
+
+
+
+
+
+	@media only screen and (max-width: 130vh) {
+		.dHeader {
+			z-index: 2;
+			position: absolute;
+			background-color: white;
+			height: 20vw;
+			width: 96vw;
+			top: 2vh;
+			left: 2vw;
+		}
+	}
+
+	@media only screen and (max-width: 130vh) {
+		.headerIMG {
+			position: relative;
+			height: 100%;
+			width: 100%;
+		}
+	}
+
+	@media only screen and (max-width: 130vh) {
+		.dFace {
+			z-index: 2;
+			position: absolute;
+			background-color: black;
+			height: 45vw;
+			width: 30vw;
+			top: calc(20vw + 4vh);
+			left: 68vw;
+		}
+	}
+
+	@media only screen and (max-width: 130vh) {
+		.FaceIMG {
+			position: relative;
+			width: 100%;
+			cursor: pointer;
+		}
+	}
+
+	@media only screen and (max-width: 130vh) {
+		.FaceIMG2 {
+			position: relative;
+			width: 90%;
+			top: 5%;
+			left: 5%;
+			cursor: pointer;
+		}
+	}
+
+	@media only screen and (max-width: 130vh) {
+		.dLinks {
+			z-index: 2;
+			position: absolute;
+			background-color: none;
+			height: 100vw;
+			width: 64vw;
+			top: calc(20vw + 4vh);
+			left: 2vw;
+			font-family: Arial;
+			font-size: 4vw;
+			color: black;
+			padding: 0px;
+		}
+	}
+
+	@media only screen and (max-width: 130vh) {
+		.dGal {
+			z-index: 2;
+			position: absolute;
+			background-color: none;
+			height: 40vw;
+			width: 30vw;
+			top: calc(65vw + 6vh);
+			left: 68vw;
+		}
+	}
+
+	@media only screen and (max-width: 130vh) {
+		.thumb {
+			position: relative;
+			display: block;
+			max-width: 100%;
+			cursor: pointer;
+		}
+	}
+
+	@media only screen and (max-width: 130vh) {
+		.fnGIF {
+			display: block;
+			z-index: -1;
+			position: fixed;
+			width: 40vw;
+			bottom: 0;
+		}
+	}
