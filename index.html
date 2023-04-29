@@ -148,12 +148,33 @@
 
 
         </script>
-
-
-
-
     </div>
+    
+    
+    <div class="final"
+         id="final">
+        <img src="ArtAllNight/final.jpg"
+             id="finalImg"
+             style="
+             width: 100%;
+             height: 100%;
+             opacity: 40%;
+             " />
+        <script>
+            document.getElementById("final").addEventListener("click", finalClick);
+            function finalClick() {
+                var image = document.getElementById('bgDivImg');
 
+                image.src = "ArtAllNight/14.jpg";
+                document.getElementById("nextImg").style.visibility = "hidden";
+                document.getElementById("backImg").style.visibility = "visible";
+                document.getElementById("links").style.visibility = "visible";
+                document.getElementById("links2").style.visibility = "visible";
+                
+            }
+        </script>
+    </div>
+    
     <div class="links"
          id="links"
          style="
