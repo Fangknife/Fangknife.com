@@ -12,7 +12,7 @@ body {
 	left: calc(50vw - 24.2vh);
 }
 
-.back {
+.next {
 	z-index: 3;
 	position: absolute;
 	background-color: black;
@@ -23,7 +23,7 @@ body {
 
 }
 
-.next {
+.back {
 	z-index: 3;
 	position: absolute;
 	background-color: black;
