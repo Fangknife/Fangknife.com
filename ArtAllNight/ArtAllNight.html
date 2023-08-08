@@ -1,0 +1,220 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fangknife.com</title>
+    <link rel="stylesheet" href="ArtAllNightCSS.css">
+    <link rel="icon" type="image/x-icon" href="favicon_2.ico.png">
+</head>
+<body>
+
+    <div class="bgDiv"
+         id="bgDiv">
+
+        <img src="ArtAllNight/1.jpg"
+             id="bgDivImg"
+             style="
+             width: 100%;
+             height: 100%;
+             opacity: 100%;
+             " />
+    </div>
+
+    <div class="back"
+         id="back">
+        <img src="ArtAllNight/back.jpg"
+             id="backImg"
+             style="
+             width: 100%;
+             height: 100%;
+             opacity: 100%;
+             visibility: hidden;
+             " />
+        <script>
+            document.getElementById("back").addEventListener("click", backClick);
+            function backClick() {
+                var image = document.getElementById('bgDivImg');
+                if (image.src.match("ArtAllNight/2.jpg")) {
+                    image.src = "ArtAllNight/1.jpg";
+                    document.getElementById("backImg").style.visibility = "hidden";
+                }
+                else if (image.src.match("ArtAllNight/3.jpg")) {
+                    image.src = "ArtAllNight/2.jpg";
+                }
+                else if (image.src.match("ArtAllNight/4b.jpg")) {
+                    image.src = "ArtAllNight/3.jpg";
+                }
+                else if (image.src.match("ArtAllNight/6.jpg")) {
+                    image.src = "ArtAllNight/4b.jpg";
+                }
+                else if (image.src.match("ArtAllNight/7.jpg")) {
+                    image.src = "ArtAllNight/6.jpg";
+                }
+                else if (image.src.match("ArtAllNight/8.jpg")) {
+                    image.src = "ArtAllNight/7.jpg";
+                }
+                else if (image.src.match("ArtAllNight/9.jpg")) {
+                    image.src = "ArtAllNight/8.jpg";
+                }
+                else if (image.src.match("ArtAllNight/10.jpg")) {
+                    image.src = "ArtAllNight/9.jpg";
+                }
+                else if (image.src.match("ArtAllNight/11.jpg")) {
+                    image.src = "ArtAllNight/10.jpg";
+                }
+                else if (image.src.match("ArtAllNight/12.jpg")) {
+                    image.src = "ArtAllNight/11.jpg";
+                }
+                else if (image.src.match("ArtAllNight/13.jpg")) {
+                    image.src = "ArtAllNight/12.jpg";
+                }
+                else if (image.src.match("ArtAllNight/14.jpg")) {
+                    image.src = "ArtAllNight/13.jpg";
+                    document.getElementById("nextImg").style.visibility = "visible";
+                    document.getElementById("links").style.visibility = "hidden";
+                    document.getElementById("links2").style.visibility = "hidden";
+                }
+
+            }
+
+
+        </script>
+
+
+    </div>
+
+    <div class="next"
+         id="next">
+        <img src="ArtAllNight/next.jpg"
+             id="nextImg"
+             style="
+             width: 100%;
+             height: 100%;
+             opacity: 100%;
+             " />
+        <script>
+            document.getElementById("next").addEventListener("click", nextClick);
+            function nextClick() {
+                var image = document.getElementById('bgDivImg');
+                if (image.src.match("ArtAllNight/1.jpg")) {
+                    image.src = "ArtAllNight/2.jpg";
+                    document.getElementById("backImg").style.visibility = "visible";
+                }
+                else if (image.src.match("ArtAllNight/2.jpg")) {
+                    image.src = "ArtAllNight/3.jpg";
+                }
+                else if (image.src.match("ArtAllNight/3.jpg")) {
+                    image.src = "ArtAllNight/4b.jpg";
+                }
+                else if (image.src.match("ArtAllNight/4b.jpg")) {
+                    image.src = "ArtAllNight/6.jpg";
+                }
+                else if (image.src.match("ArtAllNight/6.jpg")) {
+                    image.src = "ArtAllNight/7.jpg";
+                }
+                else if (image.src.match("ArtAllNight/7.jpg")) {
+                    image.src = "ArtAllNight/8.jpg";
+                }
+                else if (image.src.match("ArtAllNight/8.jpg")) {
+                    image.src = "ArtAllNight/9.jpg";
+                }
+                else if (image.src.match("ArtAllNight/9.jpg")) {
+                    image.src = "ArtAllNight/10.jpg";
+                }
+                else if (image.src.match("ArtAllNight/10.jpg")) {
+                    image.src = "ArtAllNight/11.jpg";
+                }
+                else if (image.src.match("ArtAllNight/11.jpg")) {
+                    image.src = "ArtAllNight/12.jpg";
+                }
+                else if (image.src.match("ArtAllNight/12.jpg")) {
+                    image.src = "ArtAllNight/13.jpg";
+                }
+                else if (image.src.match("ArtAllNight/13.jpg")) {
+                    image.src = "ArtAllNight/14.jpg";
+                }
+                else if (image.src.match("ArtAllNight/14.jpg")) {
+                    document.getElementById("nextImg").style.visibility = "hidden";
+                    document.getElementById("links").style.visibility = "visible";
+                    document.getElementById("links2").style.visibility = "visible";
+                }
+
+            }
+
+        </script>
+
+    </div>
+
+
+    <div class="final"
+         id="final">
+        <img src="ArtAllNight/final.jpg"
+             id="finalImg"
+             style="
+             width: 100%;
+             height: 100%;
+             opacity: 40%;
+             " />
+        <script>
+            document.getElementById("final").addEventListener("click", finalClick);
+            function finalClick() {
+                var image = document.getElementById('bgDivImg');
+
+                image.src = "ArtAllNight/14.jpg";
+                document.getElementById("nextImg").style.visibility = "hidden";
+                document.getElementById("backImg").style.visibility = "visible";
+                document.getElementById("links").style.visibility = "visible";
+                document.getElementById("links2").style.visibility = "visible";
+
+            }
+        </script>
+    </div>
+
+
+
+
+
+    <div class="links"
+         id="links"
+         style="
+         visibility: hidden;">
+
+        <p>
+            <a href="https://vinwolfe.wixsite.com/portfolio">2D Illustration Portfolio!</a>
+            Contact me if you're interested in buying anything.
+            I do commissions too and these are pretty good examples of my work. I'm flexible with pricing.
+
+        </p>
+
+    </div>
+    <div class="links2"
+         id="links2"
+         style="
+         visibility: hidden;">
+        <p>
+            <a href="https://fangknife.itch.io/graveshrine">3D view of this room! </a>
+            (Meant to view on desktop! I'm a shittily cut-out .jpg, please don't expect the Unity to run well. Can ask about works in here for sale too.)
+
+        <p><p><p>
+
+            <a href=" https://fangknife.github.io/TheShelves/shelvesWall.html"> Come visit the studio!</a>
+            (HTML in progress; Also meant to view on desktop- but check
+            <a href="https://fangknife.github.io/TheShelves/Left.html"> here</a> and
+            <a href="https://fangknife.github.io/TheShelves/Right.html"> here</a>for a mobile view!)
+
+        <p><p><p>
+
+            The classic<a href=" https://fangknife.github.io/Fangknife.com/indexOld"> Fangknife.com</a>.
+
+
+
+        </p>
+
+
+    </div>
+
+
+
+</body>
+</html>
