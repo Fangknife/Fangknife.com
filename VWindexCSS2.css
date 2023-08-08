@@ -1,0 +1,138 @@
+body {
+    background-color: black;
+    padding: 0px;
+    border-collapse: collapse;
+    margin: 0px;
+}
+
+.bgDiv {
+    z-index: 1;
+    position: absolute;
+    background-color: white;
+    height: 96vh;
+    width: 96vw;
+    top: 2vh;
+    left: 2vw;
+}
+.header {
+    z-index: 5;
+    position: absolute;
+    height: 26vw;
+    width: 86vw;
+    top: 5vw;
+    left: 5.4vw;
+}
+.headerCom {
+    z-index: 6;
+    position: absolute;
+    height: 13vw;
+    width: 29vw;
+    top: 24vw;
+    left: 69.7vw;
+}
+
+
+.texts {
+    z-index: 4;
+    position: absolute;
+    width: 88vw;
+    top: 38vw;
+    left: 6vw;
+}
+.bio {
+    z-index: 10;
+    position: relative;
+    width: 99%;
+    top: 0%;
+    left: -0.5%;
+    background-color: black;
+    text-decoration: none;
+    font-size: 17px;
+    font-family: Arial;
+    color: white;
+    text-align: center;
+    padding: 1%;
+    margin: 0px;
+}
+.link1 {
+    z-index: 11;
+    position: relative;
+    width: 60%;
+    top: 15px;
+    left: 20%;
+    background-color: black;
+    text-align: center;
+    padding: 5px;
+    margin: 0px;
+}
+.link2 {
+    z-index: 11;
+    position: relative;
+    width: 60%;
+    top: 25px;
+    left: 20%;
+    background-color: black;
+    text-align: center;
+    padding: 5px;
+    margin: 0px;
+}
+.link3 {
+    z-index: 11;
+    position: relative;
+    width: 60%;
+    top: 35px;
+    left: 20%;
+    background-color: black;
+    text-align: center;
+    padding: 5px;
+    margin: 0px;
+}
+.link4 {
+    z-index: 11;
+    position: relative;
+    width: 60%;
+    top: 55px;
+    left: 20%;
+    background-color: black;
+    text-align: center;
+    padding: 5px;
+    margin: 0px;
+}
+.link5 {
+    z-index: 11;
+    position: relative;
+    width: 60%;
+    top: 45px;
+    left: 20%;
+    background-color: black;
+    text-align: center;
+    padding: 5px;
+    margin: 0px;
+}
+
+
+
+
+
+a:link {
+    text-decoration: none;
+    font-size: 26px;
+    font-family: Arial;
+    color: red;
+    font-weight: bold;
+}
+a:visited {
+    text-decoration: none;
+    font-size: 18px;
+    font-family: Arial;
+    color: red;
+}
+a:hover, a:active {
+    text-decoration: underline;
+    font-size: 26px;
+    font-family: Georgia;
+    background-color: black;
+    color: red;
+}
+
+
