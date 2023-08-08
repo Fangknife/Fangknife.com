@@ -316,6 +316,7 @@
         padding: 5px;
         margin: 0px;
         visibility: visible;
+        color: black;
     }
 
     #link4b a:hover, a:active {
@@ -323,7 +324,7 @@
         font-size: 3vw;
         font-family: Arial;
         background-color: none;
-        color: red;
+        color: black;
     }
     #link4b a:link {
         text-decoration: none;
