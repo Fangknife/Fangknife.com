@@ -334,7 +334,7 @@
         font-weight: bold;
     }
 
-    a:link {
+    #link1, #link2, #link3, #link5 a:link {
         text-decoration: none;
         font-size: 20px;
         font-family: Arial;
