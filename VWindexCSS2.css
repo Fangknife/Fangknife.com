@@ -1,4 +1,4 @@
-@media only screen and (max-width: 80vh) {
+@media only screen and (max-width: 80vh) { //mobile
     body {
         background-color: black;
         padding: 0px;
@@ -88,7 +88,7 @@
         z-index: 11;
         position: relative;
         width: 60%;
-        top: 30px;
+        top: 40px;
         left: 20%;
         background-color: black;
         text-align: center;
@@ -100,7 +100,7 @@
         z-index: 11;
         position: relative;
         width: 60%;
-        top: 40px;
+        top: 50px;
         left: 20%;
         background-color: black;
         text-align: center;
@@ -112,7 +112,7 @@
         z-index: 11;
         position: relative;
         width: 60%;
-        top: 50px;
+        top: 60px;
         left: 20%;
         background-color: black;
         text-align: center;
@@ -137,7 +137,23 @@
         z-index: 11;
         position: relative;
         width: 60%;
-        top: 60px;
+        top: 70px;
+        left: 20%;
+        background-color: black;
+        text-align: center;
+        padding: 5px;
+        margin: 0px;
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 6.9vw;
+        font-family: Arial;
+        color: red;
+    }
+    .link6 {
+        z-index: 11;
+        position: relative;
+        width: 60%;
+        top: 30px;
         left: 20%;
         background-color: black;
         text-align: center;
@@ -145,6 +161,7 @@
         margin: 0px;
         font-weight: bold;
     }
+
 
     a:link {
         text-decoration: none;
@@ -171,7 +188,7 @@
 
 
 
-@media only screen and (min-width: 80vh) {
+@media only screen and (min-width: 80vh) { //desktop
     body {
         background-color: black;
         padding: 0px;
@@ -261,7 +278,7 @@
         z-index: 11;
         position: relative;
         width: 60%;
-        top: 30px;
+        top: 40px;
         left: 20%;
         background-color: black;
         text-align: center;
@@ -273,7 +290,7 @@
         z-index: 11;
         position: relative;
         width: 60%;
-        top: 40px;
+        top: 50px;
         left: 20%;
         background-color: black;
         text-align: center;
@@ -284,7 +301,7 @@
         z-index: 11;
         position: relative;
         width: 60%;
-        top: 18px;
+        top: 28px;
         left: 20%;
         background-color: black;
         text-align: center;
@@ -316,15 +333,27 @@
         padding: 5px;
         margin: 0px;
         visibility: visible;
-        color: black;
     }
+    .link6 {
+        z-index: 11;
+        position: relative;
+        width: 60%;
+        top: 30px;
+        left: 20%;
+        background-color: black;
+        text-align: center;
+        padding: 5px;
+        margin: 0px;
+        font-weight: bold;
+    }
+
 
     #link4b a:hover, a:active {
         text-decoration: underline;
         font-size: 3vw;
         font-family: Arial;
         background-color: none;
-        color: black;
+        color: red;
     }
     #link4b a:link {
         text-decoration: none;
@@ -334,7 +363,7 @@
         font-weight: bold;
     }
 
-    #link1, #link2, #link3, #link5 a:link {
+    a:link {
         text-decoration: none;
         font-size: 20px;
         font-family: Arial;
