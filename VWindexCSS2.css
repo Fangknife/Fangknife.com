@@ -384,11 +384,9 @@
         color: white;
     }
 
-#karny a:hover, a:active {
+#karny a:hover, a:active a:link {
     animation-play-state: running;
     animation-duration: 1s;
-}
-
 @-moz-keyframes wipe /* Firefox */
 {
 0%   {color:red;}
@@ -406,7 +404,4 @@
     75% {background: indigo}
     90% {background: violet}
 }
-
-
-                                          
 }
