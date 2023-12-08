@@ -383,7 +383,9 @@
         font-family: Arial;
         color: white;
     }
-
+#karny {
+    background-color: pink;
+}
 #karny a:hover, a:active a:link {
     animation-play-state: running;
     animation-duration: 1s;
