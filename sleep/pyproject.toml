@@ -1,0 +1,7 @@
+
+plugins = [
+"https://pyscript.net/latest/plugins/python/py_tutor.py"
+]
+[[fetch]]
+files = ['FILE6.TXT']
+to_folder = 'files'

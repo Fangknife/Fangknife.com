@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="./styles.css?v=1.1" />
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.24.1/full/pyodide.js"></script>
+    <script type="module" src="https://pyscript.net/releases/2023.11.2/core.js"></script>
+    <title>VW Sleep Charts</title>
+</head>
+<body>
+    <script type="text/javascript">
+        async function main() {
+            let pyodide = await loadPyodide();
+            console.log(pyodide.runPython("1 + 2"));
+        }
+        main();
+    </script>
+
+    <div id="main" class="main">
+
+
+        <input id="code" value="sum([1, 2, 3, 4, 5])" />
+        <button onclick="evaluatePython()">Run</button>
+        <br />
+        <br />
+        <div>Output:</div>
+        <textarea id="output" style="width: 100%;" rows="6" disabled></textarea>
+
+        <script>
+            const output = document.getElementById("output");
+            const code = document.getElementById("code");
+
+            function addToOutput(s) {
+                output.value += ">>>" + code.value + "\n" + s + "\n";
+            }
+
+            output.value = "Initializing...\n";
+            // init Pyodide
+            async function main() {
+                let pyodide = await loadPyodide();
+                output.value += "Ready!\n";
+                return pyodide;
+            }
+            let pyodideReadyPromise = main();
+
+            async function evaluatePython() {
+                let pyodide = await pyodideReadyPromise;
+                try {
+                    let output = pyodide.runPython(code.value);
+                    addToOutput(output);
+                } catch (err) {
+                    addToOutput(err);
+                }
+            }
+        </script>
+
+        <py-script src="./main.py"></py-script>
+        <div class="grid grid-cols-2 p-4 m-auto bg-blue-100 border-2 justify-items-center">
+            <div>
+                <h4 class="font-semibold">Fahrenheit</h4>
+                <input id="f-temp" class="w-3/4 bg-white border-4">
+            </div>
+            <div>
+                <h4 class="font-semibold">Celsuis</h4>
+                <input id="c-temp" class="w-3/4 bg-white border-4">
+            </div>
+        </div>
+
+
+
+        Vw's sleep thing... but ONLINE!
+        <p></p>
+
+        <div id="topDisplay" class="topDisplay">
+            <input type="number" id="dayNumb" name="dayNumb" placeholder="0"
+                   py-change="updateNumb" />
+
+            <p></p>
+            <input type="date" id="dateNumb" name="dateNumb" placeholder="dd/mm/yyyy"
+                   py-change="updateDate" />
+
+            <div class="slidecontainer">
+                <input type="range" min="0" id="slider" class="slider" name="slider" />
+
+                <p>Value: <span id="demo"></span></p>
+            </div>
+
+            <button id="button">!</button>
+
+            <div id="output">
+                output...
+            </div>
+
+            <script type="py" src="./main.py" config="./pyproject.toml"></script>
+
+        </div>
+
+
+
+        <div id="row" class="row">
+            <script>
+                var hours = Array.from(Array(24).keys())
+                function drawRow() {
+                    var row = document.getElementById("row");
+                    for (var i = 0; i < 24; i++) {
+                        var div = document.createElement("square");
+                        div.innerHTML = (hours[i]);
+                        row.appendChild(div);
+                    }
+                }
+                drawRow();
+            </script>
+
+        </div>
+
+
+    </div>
+
+</body>
+</html>
