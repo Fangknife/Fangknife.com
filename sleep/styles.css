@@ -1,74 +1,23 @@
-﻿body {
-    background-color: peru;
-}
-.main {
-    
-    position: absolute;
-    left: 5vw;
-    top: 5vh;
-    width: 90vw;
-    height: 90vh;
-    background-color: white;
-    border: 1px solid black;
+body {
+    padding: 1em;
+    background-color: grey;
+    line-height: 200%;
 }
 
 .row {
     position: relative;
-    left: 5vw;
-    top: 15px;
-    width: 80vw;
-    height: calc(80vw/24);
+    width: calc(100vw-2em);
+    height: 4.15vw;
     background-color: grey;
-    border: 1px solid black;
     display: grid;
     grid-template-columns: repeat(24, minmax(0, 1fr));
     grid-template-rows: auto;
 }
 #row square {
-    background-color: palevioletred;
-    border: 1px solid black;
-}
-.topDisplay {
-    position: relative;
-    left: 5vw;
-    top: 5px;
-    width: 80vw;
-    background-color: dimgrey;
-}
-
-
-input::-webkit-clear-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-
-.slidecontainer {
-  width: 100%;
-}
-
-.slider {
-  -webkit-appearance: none;
-  width: 100%;
-  height: 22px;
-  background: #d3d3d3;
-  outline: none;
-
-}
-
-
-.slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 22px;
-    height: 22px;
-    background: #ffffff;
-    cursor: pointer;
-}
-
-.slider::-moz-range-thumb {
-  width: 22px;
-  height: 22px;
-  background: #ffffff;
-  cursor: pointer;
+    background-color: grey;
+    font-size: min(3vw, 16px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #B3B3B3;
 }
