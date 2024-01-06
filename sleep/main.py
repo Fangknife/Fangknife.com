@@ -1,14 +1,11 @@
 from pyscript import document
-
 from js import document, console
 
-    
 
 def updateNumb(event):
     dayNumb = document.querySelector("#dayNumb").value
     if int(dayNumb) in numbDict:
         dayVal = numbDict[int(dayNumb)]
-        document.querySelector("#output").innerText = dayVal
         broadcastToRow(dayVal[1])
         dateTmp = dayVal[0]
         newDate = dateTmp[6:] + "-" + dateTmp[:2] + "-" + dateTmp[3:5]  # yyyy-mm-dd
@@ -22,7 +19,6 @@ def updateDate(event):
     newDate = dateTmp[5:7] + "/" + dateTmp[8:10] + "/" + dateTmp[:4] # mm/dd/yyyy
     if newDate in dateDict:
         dateVal = dateDict[newDate]
-        document.querySelector("#output").innerText = dateVal
         document.querySelector("#dayNumb").value = dateVal[0]
         broadcastToRow(dateVal[1])
     else:
@@ -34,11 +30,13 @@ def broadcastToRow(val):
     for i in range(24):
         if val[i] == 'w':
             row[i].style.backgroundColor = "white"
+            row[i].style.color = "black"
         elif val[i] == 'b':
             row[i].style.backgroundColor = "black"
+            row[i].style.color = "white"
         else:
             row[i].style.backgroundColor = "grey"
-
+            row[i].style.color = "#B3B3B3"
 
 
 # startup functions vvv
@@ -64,13 +62,8 @@ def makeDateDict(filename):
             d[tmp] = tmpLst
     return d    # dict mapping { 'date' : [dayNumb, 'bbbwww'], }
 
-f = open("files/FILE6.TXT", "r")
+
+f = open("./files/FILE6.TXT", "r")
 file = f.read()
-x = 0
-for line in file.split("\n"):
-    if "x" not in line and line != "":
-        x += 1
-document.querySelector("#slider").value = 0 # get max day & set
-document.querySelector("#slider").max = x  
 numbDict = makeNumbDict(file)
 dateDict = makeDateDict(file)
