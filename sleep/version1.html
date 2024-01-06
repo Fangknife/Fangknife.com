@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="./styles.css" /> <!--"./styles.css?v=1.1"-->
+
+    <script type="module" src="https://pyscript.net/releases/2023.11.2/core.js"></script>
+    <title>VW Sleep Chart 2</title>
+</head>
+<body>
+    <div class="p1">
+
+        * Alt/ammended version of this: <a href="fangknife.com/sleep/version2.html">Version 2</a><br />
+        * Unsure of date-picker across browsers.<br /> <br />
+
+    </div>
+
+    VW's sleep thing... but ONLINE!<br />
+
+    <input type="number" id="dayNumb" name="dayNumb" placeholder="0"
+           py-change="updateNumb" />   <br />
+
+    <input type="date" id="dateNumb" name="dateNumb" placeholder="dd/mm/yyyy"
+           py-change="updateDate" />   <br /> <br />
+
+    <script type="py" src="./mainV1.py" config="./pyproject.toml"></script>
+
+
+    <div id="row" class="row">
+        <script>
+            var hours = Array.from(Array(24).keys())
+            function drawRow() {
+                var row = document.getElementById("row");
+                for (var i = 0; i < 24; i++) {
+                    var div = document.createElement("square");
+                    div.innerHTML = (hours[i]);
+                    row.appendChild(div);
+                }
+            }
+            drawRow();
+        </script>
+    </div>
+
+    <!--
+    Hi- web display version of the sleep charts because why not. Wanted them formatted similar and this seems like a fun toy.
+    Doesn't do much, but I managed to get PyScript working.
+    Sorry if the date picker isn't compatable- or it's ugly- html input/form elements don't have great css. Here's something fun:
+    tried to get a slider working to scroll through dates like the physComp project- fun fact!!! If you use pyscript on a html
+    type="slider" element, it wanted to register py-input, not py-change like the other inputs, and I could just Not get that value
+    to pass to the python script! So I was looking at pyodide, but too much issue just for a slider. You can get kind of
+    the same effect by holding an arrow key down in the number input. Other option's panel, which has like a lot of really good components,
+    but it makes things take forever to load. I just wanted a fucking slider.
+
+    hidden comment because I just want the page to look clean & this doesn't matter lol
+    -->
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="./styles.css?v=1.1" /> <!--"./styles.css?v=1.1"-->
+
+    <script type="module" src="https://pyscript.net/releases/2023.11.2/core.js"></script>
+    <title>VW Sleep Chart</title>
+</head>
+<body>
+    <div class="p1">
+
+        * Holding 'up' or 'down' arrow keys in number input can work to scroll.<br />
+        * Might lag with more rows.<br />
+        * Browser zoom in/out should work to view more rows.<br />
+        * Day number and date are for top row.<br /><br />
+    </div>
+
+    VW's sleep thing... but <b>ONLINE!</b><br />
+
+    <input type="number" id="dayNumb" name="dayNumb" value="0"
+           py-change="updateNumb" />
+    day number input<br />
+
+    <script type="py" src="./mainV2.py" config="./pyproject.toml"></script>
+
+
+    <input type="number" id="gridButton" name="gridButton" value="0" min="0"
+            onchange="gridChange()" py-change="updateNumb"/>
+    number of rows<br />
+
+    <div id="value">. . .</div>
+
+    <div id="row" class="row">
+        <script>
+
+            function gridChange() {
+                var hours = Array.from(Array(24).keys())
+                var targRows = document.querySelector("#gridButton").value;
+                if (targRows >= 0){
+                    drawRow();
+                }
+                function drawRow() {
+                    var row = document.getElementById("row");
+                    var curRows = (row.childElementCount - 1) / 24;
+                    if (curRows > targRows){
+                        for (var x = 0; x < (curRows - targRows); x++) {
+                            for (var i = 0; i < 24; i++) {
+                                row.lastChild.remove(div);
+                            }
+                        }
+                    } else {
+                        for (var x = 0; x < (targRows - curRows); x++) {
+                            for (var i = 0; i < 24; i++) {
+                                var div = document.createElement("square");
+                                div.innerHTML = (hours[i]);
+                                row.appendChild(div);
+                            }
+                        }   
+                    }
+                }
+            }
+        </script>
+    </div>
+
+
+</body>
+</html>
