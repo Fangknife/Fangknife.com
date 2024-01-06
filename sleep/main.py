@@ -1,7 +1,8 @@
 from pyscript import document
 
 from js import document, console
-from pyodide import create_proxy
+
+    
 
 def updateNumb(event):
     dayNumb = document.querySelector("#dayNumb").value
