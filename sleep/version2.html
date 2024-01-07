@@ -1,19 +1,18 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" type="text/css" href="./styles.css?v=1.1" /> <!--"./styles.css?v=1.1"-->
+    <link rel="stylesheet" type="text/css" href="./styles.css" /> <!--"./styles.css?v=1.1"-->
 
     <script type="module" src="https://pyscript.net/releases/2023.11.2/core.js"></script>
-    <title>VW Sleep Chart</title>
+    <title>Version 2</title>
 </head>
 <body>
     <div class="p1">
-        * First version of this is here: <a href="./version1.html">Version 1</a><br />
+        * First version of this is here: <a href="./version2.html">Version 1</a><br />
         * Holding 'up' or 'down' arrow keys in number input can work to scroll.<br />
-        * Might lag with more rows.<br />
-        * Browser zoom in/out should work to view more rows.<br />
+        * Expect it to lag with more rows.<br />
         * Day number and date are for top row.<br /><br />
     </div>
 
@@ -23,13 +22,15 @@
            py-change="updateNumb" />
     day number input<br />
 
-    <script type="py" src="./mainV2.py" config="./pyproject.toml"></script>
-
-
     <input type="number" id="gridButton" name="gridButton" value="0" min="0"
-            onchange="gridChange()" py-change="updateNumb"/>
+           onchange="gridChange()" py-change="updateNumb" />
     number of rows<br />
 
+    <input type="number" id="rowHeight" name="rowHeight" value="0"
+           py-change="rowHeightManual" />
+    row height<br />
+
+    <script type="py" src="./mainV2.py?v=1.1" config="./pyproject.toml"></script>
     <div id="value">. . .</div>
 
     <div id="row" class="row">
@@ -57,7 +58,7 @@
                                 div.innerHTML = (hours[i]);
                                 row.appendChild(div);
                             }
-                        }   
+                        }
                     }
                 }
             }
