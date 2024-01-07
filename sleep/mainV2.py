@@ -1,27 +1,23 @@
 from pyscript import document
 from js import document, console
 
-
 def updateNumb(event):
-    dayNumb = document.querySelector("#dayNumb").value
-    if int(dayNumb) in numbDict:
-        document.getElementById("value").innerHTML = numbDict[int(dayNumb)][0]
+    dayNumb = int(document.querySelector("#dayNumb").value)
+    if dayNumb in numbDict:
+        document.getElementById("value").innerHTML = numbDict[dayNumb][0]
     else: 
         document.getElementById("value").innerHTML = ". . . "
 
-
-    rows = (document.getElementById("row").childElementCount - 1 ) / 24 # vvv make lst to broadcast
+    rows = int((document.getElementById("row").childElementCount - 1 ) / 24) # vvv make lst to broadcast
     val= ""
-    for i in range(int(rows)):
-        curDayNumb = int(dayNumb) + i
+    for i in range(rows):
+        curDayNumb = dayNumb + i
         if curDayNumb in numbDict:
              val += (numbDict[curDayNumb][1])
         else: 
              val += ("g" * 24)
-
     broadcastToRow(val)
-
-
+    rowHeightManual(val)
 
 def broadcastToRow(val):
     row = document.getElementsByTagName("square")
@@ -35,6 +31,18 @@ def broadcastToRow(val):
         else:
             row[i].style.backgroundColor = "grey"
             row[i].style.color = "#B3B3B3"
+
+
+def rowHeightManual(event):
+    rows = (document.getElementById("row").childElementCount - 1 ) / 24
+    grid = document.getElementById("row")
+    mult =  int(document.querySelector("#rowHeight").value)
+    if mult < -1 :
+        height = round(-4.15/(0.6*mult - 0.2), 2)
+    else:
+        height = round((mult/2) + 4.15, 2)
+    newVal = "repeat(" + str(int(rows)) + ", " + str(height) + "vw)"
+    grid.style.gridTemplateRows = newVal
 
 
 # startup functions vvv
