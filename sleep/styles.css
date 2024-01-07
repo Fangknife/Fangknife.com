@@ -11,16 +11,22 @@ body {
     background-color: grey;
     display: grid;
     grid-template-columns: repeat(24, minmax(0, 1fr));
-    grid-template-rows: auto;
+    grid-template-rows: repeat(1, 4.15vw);
 }
 #row square {
-    background-color: grey;
-    font-size: min(3vw, 16px);
+    font-size: min(2.5vw, 20px);
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #B3B3B3;
 }
 .p1 {
-    line-height: 95%;
-    color: #B3B3B3;
+    line-height: 100%;
+    color: white;
+}
+
+a:link, a:visited {
+    color: #3333ff;
+}
+a:hover, a:active {
+    color: blue;
+}
