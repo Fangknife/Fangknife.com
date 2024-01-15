@@ -1,7 +1,6 @@
 ﻿body {
     padding: 1em;
     background-color: black;
-
     color: white;
 }
 p {
@@ -16,6 +15,5 @@ a:hover, a:active {
     color: blue;
 }
 h1 {
-
     color: white;
 }
