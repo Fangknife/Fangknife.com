@@ -1,0 +1,21 @@
+﻿body {
+    padding: 1em;
+    background-color: black;
+
+    color: white;
+}
+p {
+    line-height: 110%;
+}
+
+a:link, a:visited {
+    color: #3333ff;
+}
+
+a:hover, a:active {
+    color: blue;
+}
+h1 {
+
+    color: white;
+}
