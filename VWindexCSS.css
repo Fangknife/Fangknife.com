@@ -1,35 +1,9 @@
 body {
-	background-color: white;
+	background-color: black;
 	padding: 0px;
 	border-collapse: collapse;
 	margin: 0px;
 }
-
-#karny {
-    background-color: pink;
-}
-#karny a:hover, a:active a:link {
-    animation-play-state: running;
-    animation-duration: 1s;
-}
-@-moz-keyframes wipe /* Firefox */
-{
-0%   {color:red;}
-50%  {color:orange;}
-100%   {color:red;}
-}
-
-@-webkit-keyframes wipe /* Chrome */
-{
-    0%   {background:red;}
-    15%  {background:orange;}
-    30% {background:yellow}  
-    45% {background: green}
-    60% {background: blue}
-    75% {background: indigo}
-    90% {background: violet}
-}
-
 
 
 @media only screen and (max-width: 130vh) {
@@ -85,7 +59,7 @@ body {
 		.dHeader {
 			z-index: 2;
 			position: absolute;
-			background-color: pink;
+			
 			height: 14vw;
 			width: 67vw;
 			top: 2vh;
@@ -155,7 +129,7 @@ body {
 			left: 2vw;
 			font-family: Arial;
 			font-size: 18px;
-			color: black;
+			color: white;
 			padding: 0px;
 		}
 	}
@@ -188,7 +162,7 @@ body {
 		.dHeader {
 			z-index: 2;
 			position: absolute;
-			background-color: white;
+			background-color: black;
 			height: 20vw;
 			width: 96vw;
 			top: 2vh;
@@ -247,6 +221,7 @@ body {
 			font-size: 4vw;
 			color: black;
 			padding: 0px;
+			color: white;
 		}
 	}
 
