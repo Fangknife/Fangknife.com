@@ -1,0 +1,102 @@
+﻿
+body {
+    background-color: #110E0D;
+    margin: 0px;
+    padding: 0px;
+    border-collapse: collapse;
+    font-size: 20px;
+    font-family: serif;
+}
+
+header {
+    position: relative;
+    background-color: black;
+    text-align: right;
+
+}
+.headerIMG {
+    height: 62px;
+    display: inline-flex;
+    position: absolute;
+    left: 5px;
+    z-index: 5;
+    padding: 1px;
+    cursor: pointer;
+}
+button {
+    background-color: black;
+    border: none;
+    color: white;
+    font-size: 1em;
+    text-align: center;
+    margin: 20px;
+}
+button:hover {
+    color: red;
+    cursor: pointer;
+}
+
+.block {
+    position: relative;
+    padding: 0.8vw;
+    margin: 20px;
+    background-color: #0c0425;
+    font-size: 0.8em;
+    font-family: Optima, Segoe, Arial, sans-serif;
+    color: #E6DFD7;
+}
+#contactPage {
+    background-color: black;
+    margin: 0px;
+    padding: 0px;
+    border-collapse: collapse;
+    font-size: 20px;
+    font-family: serif;
+}
+.header2 {
+    text-align: center;
+    font-size: 10vw;
+    padding: 20px;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), black), url("IMG/bg1.gif");
+}
+.car {
+    position: relative;
+    z-index: 4;
+    top:20px;
+    height: 28vh;
+}
+.header3 {
+    text-align: center;
+    font-size: 10vw;
+    padding: 20px;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), black), url("IMG/bg1.gif");
+}
+.sprite {
+    position: relative;
+    z-index: 4;
+    top: 20px;
+    height: 28vh;
+}
+#block3 {
+    position: relative;
+    padding: 0.8vw;
+    margin: 20px;
+    background-color: black;
+    font-size: 0.8em;
+    font-family: Optima, Segoe, Arial, sans-serif;
+    color: #E6DFD7;
+}
+a:link {
+    text-decoration: none;
+    color: red;
+}
+
+a:visited {
+    text-decoration: none;
+    color: red;
+}
+
+a:hover, a:active {
+    text-decoration: underline;
+    color: red;
+}
