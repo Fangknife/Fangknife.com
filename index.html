@@ -1,101 +1,98 @@
-<html lang="en">
+﻿<!DOCTYPE html>
+<html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>fangknife.com</title>
-    <link rel="stylesheet" href=" VWindexCSS2.css">
-    <link rel="icon" type="image/x-icon" href="favicon_2.ico.png">
+    <title>Fuck</title>
+    <script type="module" src="https://pyscript.net/releases/2023.11.2/core.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/p5.min.js"></script>
+
+    <style>
+        body {
+            background-color: #b0cce8;
+            margin: 20px;
+        }
+        button{
+            padding:20px;
+        }
+    </style>
+
 </head>
 <body>
-    <div class="bgDiv"
-         id="bgDiv">
-    </div>
-    <div class="header"
-         id="header">
-        <img src="IMG/fn7.jpg"
-             id="headerIMG"
-             style="
-                 position: relative;
-                 width: 100%;
-                 height: 100%;
-                 opacity: 100%;
-             " />
-    </div>
-    <div class="header2"
-         id="header"2>
-        <img src="IMG/fnDesk.png"
-             id="headerIMG"
-             style="
-                 position: relative;
-                 width: 100%;
-                 height: 100%;
-                 opacity: 100%;
-             " />
-    </div>
+    <!--<input type="number" id="dayNumb" name="dayNumb" value="0"
+           py-change="vvv" />-->
+    <button id="b1">check bluetooth</button>
 
-    <div class="headerCom"
-         id="headerCom">
-        <img src="IMG/com.png"
-             id="headerIMG"
-             style="
-                 position: relative;
-                 width: 100%;
-                 height: 100%;
-                 opacity: 100%;
-             " />
-    </div>
+    <!--<button id="b2">turn off bluetooth</button>-->
 
-    <div class="texts"
-         id="texts">
+    <div id="txt">no serial...</div>
 
-        <div class="bio"
-             id="bio">
-            <br>
-            Vincent Wolfe is a Pittsburgh local artist. Welcome to my website.
-            <p style=' font-size: 14px;'>
-                Updates mainly available on Instagram
-                <br>
-                Commission work possible, message me
-                <br>
-                Contact : vincentwolfe15@gmail.com
-                <br>
-            </p>
-        </div>
+    <!--<script type="py" src="main.py?v=1.1" config="pyscript.json?v=1.1"></script>
+    <script src="index.js?v=1.1"></script>-->
 
-        <div class="link1"
-             id="link1">
-            <a href="https://www.instagram.com/fangknife/">Instagram</a>
-        </div>
-        <div class="link6"
-             id="link6">
-            <a href="https://vinwolfe.wixsite.com/portfolio">Portfolio</a>
-        </div>
+    <script type="module">
+        if ("serial" in navigator) {
+            document.getElementById("txt").innerHTML = "serial possible!"
+            console.log("true!")
+        };
 
-        <div class="link2"
-             id="link2">
-            <a href="https://www.etsy.com/shop/FangknifeApparel?ref=l2-about-shopname">Etsy</a>
-        </div>
-        <div class="link3"
-             id="link3">
-            <a href="https://www.youtube.com/channel/UCMwicwd-i-wbsqnLzTLTYbQ">Youtube</a>
-        </div>
-        <div class="link4"
-             id="link4">
-            <a href="secretindex.html">(secret site)</a>
-        </div>
+        document.querySelector('#b1').addEventListener('click', async () => {
+            const port = await navigator.serial.requestPort();
+            await port.open({ baudRate: 9600 });
 
-        <div class="link5"
-             id="link5">
-            <a href="https://www.venmo.com/u/v_wolfe">Venmo,</a>
-            <a href="https://www.paypal.com/paypalme/wolfpaw67">Paypal</a>
-        </div>
+            let keepReading = true;
+            let reader;
+            while (port.readable && keepReading) {
+
+                const textDecoder = new TextDecoderStream();
+                const readableStreamClosed = port.readable.pipeTo(textDecoder.writable);
+                const reader = textDecoder.readable
+                    .pipeThrough(new TransformStream(new LineBreakTransformer()))
+                    .getReader();
+                try { 
+                    while (true) { 
+                        const { value, done } = await reader.read();
+                        if (done) {
+                            reader.releaseLock();
+                            break;
+                        }
+                        console.log(value);
+                    }
+                } catch (error) {
+                    //
+                } finally {
+                    reader.releaseLock();
+                }
+            }
+            await port.close();
+        });
+
+        class LineBreakTransformer {
+            constructor() {
+                this.chunks = "";
+            }
+            transform(chunk, controller) {
+                this.chunks += chunk;
+                const lines = this.chunks.split("\r\n");
+
+                this.chunks = lines.pop();
+                lines.forEach((line) => controller.enqueue(line));
+            }
+            flush(controller) {
+                controller.enqueue(this.chunks);
+            }
+        }
+    </script>
+
+    <div id="txt2">
+        ...
+
 
     </div>
 
-    <div class="link4b"
-         id="link4b">
-        <a href="secretindex.html">[Secret Site]</a>
-    </div>
+
+
+
 
 
 </body>
 </html>
+
