@@ -18,14 +18,34 @@
 
     </div>
 
-    <button onclick="aboutClick()" class="buttonRight">
+    <button onclick="rightClick()" class="buttonRight">
         -->
     </button>
-    <button onclick="aboutClick()" class="buttonLeft">
+    <button onclick="leftClick()" class="buttonLeft">
         <--
     </button>
 
-
+    <script type="text/javascript">
+        var numb = 0;
+        var lst = [
+            "hello, hi what the fuck.",
+            "skdjnss. <br> lajddf. what the fuck.",
+            "fag. <br> cunt. <br> woot"
+        ];
+        var block = document.getElementById("block");
+        function rightClick() {
+            if (numb < lst.length -1) {
+                numb += 1;
+                block.innerHTML = lst[numb];
+            }
+        }
+        function leftClick() {
+            if (numb > 0) {
+                numb -= 1;
+                block.innerHTML = lst[numb];
+            }
+        }
+    </script>
 
 
 </body>
