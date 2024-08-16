@@ -1,0 +1,105 @@
+:root {
+    --pad: 20px;
+    --mainRatio: 57.8;
+}
+
+body {
+	background-color: black;
+	padding: 0px;
+	border-collapse: collapse;
+	margin: auto;
+}
+.bgDiv {
+	position: absolute;
+	overflow: hidden;
+}
+@media only screen and (min-height: 57.8vw) {	/* taller */
+    .bgDiv {
+        width: calc(100vw - var(--pad) * 2);
+        height: calc(var(--mainRatio) * 1vw - var(--pad) * 2);
+        top: calc(50vh - var(--mainRatio) * 0.5vw + var(--pad));
+        left: var(--pad);
+    }
+}
+@media only screen and (max-height: 57.8vw) {	/* wider */
+    .bgDiv {
+        height: calc(100vh - var(--pad) * 5);
+        width: calc(10000vh / var(--mainRatio) - var(--pad) * 5);
+        top: calc(var(--pad) * 2.5);
+        left: calc(50vw - 5000vh / var(--mainRatio) + var(--pad) * 2.5);
+    }
+}
+.bgDivImg {
+	position: relative;
+	top: 0;
+	height: 100%;
+}
+.vwClip {
+	position: absolute;
+	clip-path: url(#vwClipSvg);
+	cursor: pointer;
+    z-index: 10;
+	height: 68%;
+    aspect-ratio: 1;
+    top: 12%;
+	/* background-color: blue;
+	opacity: 30%; */
+}
+/* TEXT VVVVVVVVVVVVVVV */
+@font-face { 
+	font-family: "pixelFont"; 
+	src: url('./ASSET/yoster.ttf'); 
+}
+.textBox {
+    position: absolute;
+    width: 100%;
+	height: var(--pad);
+    left: 0%;
+    z-index: 4;
+    display: flex;
+	justify-content: center;
+	align-items: center;
+    color: white;
+    font-family: "pixelFont";
+	visibility: hidden;
+}
+ @media only screen and (min-height: 64vw) {	/* taller */
+	.textBox {
+		font-size: 2.6vw;
+		top: calc( 50vh + var(--mainRatio)*0.5vw );
+	}
+	.textBoxExit:hover { font-size: 2.9vw; }
+}
+@media only screen and (max-height: 64vw) and (min-height: 57.8vw) {
+	.textBox {
+		font-size: 5.2vh;
+		top: calc( 50vh - var(--pad)*2.1 + var(--mainRatio)*0.5vw );
+	}
+	.textBoxExit:hover { font-size: 6vh; }
+}
+@media only screen and (max-height: 57.8vw) {	/* wider */
+	.textBox {
+		font-size: 4vh;
+		top: calc(100vh - var(--pad)*1.75);
+	}
+	.textBoxExit:hover { font-size: 4.3vh; }
+}
+.textBoxExit {
+	width: 10%;
+	left: 45%;
+}
+.textBoxExit:hover {
+    cursor: pointer;
+    animation-name: floating;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}  
+@keyframes floating {
+    0% { transform: translate(0,  0px); }
+        /* filter:drop-shadow(3px 2px 0px #531313);} */
+    50%  { transform: translate(0, -4px); }
+        /* filter:drop-shadow(3px 2px 0px #531313);} */
+    100%   { transform: translate(0, 0px); }
+        /* filter:drop-shadow(3px 2px 0px #531313);} */
+}

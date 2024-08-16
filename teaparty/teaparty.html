@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>teaParty</title>
+    <link rel="stylesheet" href="teaparty.css">
+    <link rel="icon" type="image/x-icon" href="favicon_2.ico.png">
+</head>
+<body onload="loadFunc()">
+    <script>
+        function loadFunc() {
+            const divs = document.querySelectorAll("#backgroundImg, #tableImg, #textBoxImg, #textBox, #nextButton, #prevButton, #xBox");
+            divs.forEach((element) => {
+                element.style.visibility = "hidden";
+            });
+        }
+    </script>
+
+    <div class="mainBlock" id="mainBlock">
+        <!-- Load in screen vvv -->
+        <img src="./IMG/textBoxSmall1.png" class="textBoxSmallImg" id="textBoxLeftImg" style="left: 2%"/> 
+        <div class="textBoxSmall" id="textBoxLeft" style="left: 2%">
+            Exit
+        </div> 
+         
+        <img src="./IMG/textBoxSmall1.png" class="textBoxSmallImg" id="textBoxRightImg" style="right: 2%"/>
+        <div class="textBoxSmall" id="textBoxRight" style="right: 2%">
+            Enter
+        </div> 
+        <!-- load screen button animations vvv -->
+        <script type="text/javascript"> 
+            document.getElementById("textBoxLeft").addEventListener("mouseover", function() {
+                document.getElementById("textBoxLeftImg").src= "./IMG/textBoxSmall2.png";
+            });
+            document.getElementById("textBoxLeft").addEventListener("mouseout", function() {
+                document.getElementById("textBoxLeftImg").src= "./IMG/textBoxSmall1.png";
+            });
+            document.getElementById("textBoxLeft").addEventListener("click", function() {
+                document.location = 'index.html';
+            });
+            document.getElementById("textBoxRight").addEventListener("mouseover", function() {
+                document.getElementById("textBoxRightImg").src= "./IMG/textBoxSmall2.png";
+            });
+            document.getElementById("textBoxRight").addEventListener("mouseout", function() {
+                document.getElementById("textBoxRightImg").src= "./IMG/textBoxSmall1.png";
+            });
+            document.getElementById("textBoxRight").addEventListener("click", function() {
+                var divs = document.querySelectorAll("#textBoxLeftImg, #textBoxLeft, #textBoxRightImg, #textBoxRight");
+                divs.forEach((element) => {
+                    element.style.display = "none";
+                });
+                document.getElementById("mainImg").src= "./IMG/f1.png";
+                divs = document.querySelectorAll("#backgroundImg, #tableImg, #textBoxImg, #textBox, #nextButton, #prevButton, #xBox");
+                divs.forEach((element) => {
+                    element.style.visibility = "visible";
+                });
+            });
+        </script>
+        <!-- Load in screen ^^^ -->
+
+        <div class="xBox" id="xBox">X</div> 
+        <img src="./IMG/brick_2.gif" class="mainImg" id="backgroundImg"/>  
+        <img src="./IMG/dinner2.png" class="mainImg" id="mainImg"/>  
+        <img src="./IMG/table.png" class="mainImg" id="tableImg"/>  
+
+        <img src="./IMG/textBox.png" class="textBoxImg" id="textBoxImg"/> 
+
+        <img src="./IMG/nextButton.png" class="nextButton" id="nextButton" style="bottom: 4%"
+            onmouseover="nextButtonMouse()" onmouseout="nextButtonMouseOut()" onclick="nextButtonClick()"/>
+        <img src="./IMG/prevButton.png" class="nextButton" id="prevButton" style="bottom: 8.5%"
+            onmouseover="prevButtonMouse()" onmouseout="prevButtonMouseOut()" onclick="prevButtonClick()"/>
+
+        <div class="textBox" id="textBox">Oh </div> 
+
+        <script type="text/javascript">
+            var mainNumb = 0;
+            var images = new Array()
+            images = [
+                "./IMG/f1.png","./IMG/f1.png","./IMG/f2.png","./IMG/f3.png",
+                "./IMG/f4.png","./IMG/f5.png","./IMG/f6.gif","./IMG/f6.gif",
+                "./IMG/f6.gif","./IMG/f8.png","./IMG/f9.png",
+                "./IMG/f10.png","./IMG/f10.png","./IMG/f11.png","./IMG/f12.png",
+                "./IMG/f13.png","./IMG/f13.png","./IMG/f14.png","./IMG/f15.png",
+                "./IMG/f16.png","./IMG/f1.png"
+            ]
+            var text = new Array()
+            text = [
+                "Oh",
+                "Oh- hi.",
+                "Welcome to the party !!!",
+                "I’m so glad you could make it!",
+                "Hold on,",
+                "I think more of our guests just arrived . . .",
+                "Let me..",
+                "..get the door . . .",
+                "And introduce you . . .",
+                "-to Vincent!",
+                "And Baby Vincent!",
+                "And the one with articulated limbs-",
+                "-who is also most likely to be haunted..",
+                "Horse Vincent!",
+                "And one more,",
+                "Vincent!",
+                ". . .",
+                ". . . Go have a seat.",
+                "Here, I think I need to get more drinks..",
+                "You guys just keep eachother company!",
+                ""
+            ]
+            // button HOVERS vvv
+            function nextButtonMouse() {
+                document.getElementById("nextButton").src = "./IMG/nextbutton.gif";
+            }
+            function nextButtonMouseOut() {
+                if (mainNumb < images.length -1){
+                    document.getElementById("nextButton").src = "./IMG/nextbutton.png";
+                }
+            }
+            function prevButtonMouse() {
+                if (mainNumb > 0) {
+                    document.getElementById("prevButton").src = "./IMG/prevButton.gif";
+                }
+            }
+            function prevButtonMouseOut() {
+                document.getElementById("prevButton").src = "./IMG/prevButton.png";
+            }
+            // button CLICKS vvv
+            function nextButtonClick() {
+                if (mainNumb < images.length -1) {
+                    mainNumb += 1;
+                    document.getElementById("mainImg").src = images[mainNumb];
+                    document.getElementById("textBox").innerHTML = text[mainNumb];
+                }
+                if (mainNumb == images.length -1) {
+                    mainNumb += 1;
+                    document.getElementById("prevButton").style.display = "none";
+                    document.getElementById("xBox").style.display = "none";
+                } else if (mainNumb == images.length) {
+                    document.location = 'scrollParty.html';
+                }
+            }
+            function prevButtonClick() {
+                if (mainNumb > 0) {
+                     mainNumb -= 1;
+                     document.getElementById("mainImg").src = images[mainNumb];
+                     document.getElementById("textBox").innerHTML = text[mainNumb];
+                }
+            }
+            document.getElementById("xBox").addEventListener("click", function() {
+                document.location = 'index.html';
+            });
+        </script>
+    </div>
+</body>
+</html>

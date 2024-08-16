@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="scrollParty.CSS" />
+    <title>scroll party</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+    <div class="bgDiv" id="bgDiv">
+        <img src="./IMG/teaparty1.jpg" class="bgDivImg" id="bgDivImg" style="left: 0;" 
+            onmouseenter="mouseOn()"/> <!-- styleLeft0 has 2 b here not CSS? -->
+
+        <div id="vwClip" class="vwClip" style="left: -100vw;" onclick="vwClick()"></div>
+        <svg width="0" height="0">
+            <clipPath id="vwClipSvg" clipPathUnits="objectBoundingBox">
+                <path d="M.33,1s0-.04,0-.07h-.18s0,0,0,0c.04-.12.03-.27.11-.38.04-.04.16-.02.14-.1C.21.1.25-.09.66.09c.06.16-.15.41.07.49,0,.11.13.1.21.15.02.07.02.19,0,.26-.12.01-.25,0-.37.02h-.23Z"></path>
+            </clipPath>
+            
+        </svg>
+    </div>
+    <div class="textBox" id="textBox">I don't think he's coming back</div> 
+
+    <script type="text/javascript">
+        var text = new Array()
+        text = [
+            "I don't think he's coming back",
+            "I don't think he's coming back",
+            "I don't think he's coming back .",
+            "I don't think he's coming back . .",
+            "I don't think he's coming back . . .",
+            "", 
+            "",
+            "Exit?" ]
+        function vwClick() {
+            var textBox = document.getElementById("textBox");
+            var vwClip = document.getElementById("vwClip");
+            var bgDivImg = document.getElementById("bgDivImg");
+            vwClip.style.visibility = "hidden";
+            bgDivImg.src = "./IMG/teaparty3.jpg";
+            textBox.classList.remove("textBoxExit");
+            textBox.innerHTML = text[0];
+            textBox.style.visibility = "visible";
+            function exitClick() {
+                if (textBox.classList.contains("textBoxExit")) {
+                    document.location = 'index.html';
+                }
+            }
+            var i = 0;
+            vwInterval = setInterval(vwNextFrame, 800);
+            function vwNextFrame() {
+                console.log(i);
+                textBox.innerHTML = text[i];
+                i += 1;
+                if (i == text.length -2) {
+                    bgDivImg.src = "./IMG/teaparty2.jpg";
+                } else if (i == text.length -1) {
+                    bgDivImg.src = "./IMG/teaparty1.jpg";
+                } else if (i == text.length ) {
+                    clearInterval(vwInterval);
+                    textBox.classList.add("textBoxExit");
+                    textBox.addEventListener("click", exitClick);
+                    vwClip.style.visibility = "visible";
+                }
+            };
+        };
+ 
+        // mouse scrolling img vvv
+        var onVw = false;
+        bgDiv.addEventListener("mouseout", function () {
+            if (document.getElementById("vwClip").matches(':not(:hover)')) {    // mouse isn't on vw
+                clearInterval(mouseInterval);   // stop moving bgImg
+                if (onVw == true) { // but if mouse just moved off of vw...
+                    onVw = false;   // then we're clearing, but 'false' restarts the interval.
+                }
+            }
+        });
+        vwClip.addEventListener("mouseover", function () {  // just moused into vw
+            onVw = true;
+        }); 
+        window.onresize = function () {
+            bgDivImg.style.left = 0;
+            vwClip.style.left = 0;
+        };
+        function mouseOn() {
+            var bgDivImg = document.getElementById("bgDivImg");
+            var bgDivWidth = document.getElementById("bgDiv").offsetWidth;
+            var center = window.innerWidth/2;
+            var speedMult = bgDivImg.width / 100;  // arbitrary multiplier numb...  
+            var mouseX = event.clientX; // mouse's horizontal position
+            document.addEventListener('mousemove', function (event) {
+                mouseX = event.clientX; // get new mouse position when it moves
+            })
+            mouseInterval = setInterval(checkMousePos, 50);
+
+            function checkMousePos() { 
+                var speedX; // calc this first vvv
+                if (center + 0.1 * bgDivWidth > mouseX > center - 0.1 * bgDivWidth) {   // mouse is center, 0.1 = "no move" range
+                    speedX = 0;
+                } else if (mouseX > center + (0.1 * bgDivWidth)) {  // right side
+                    speedX = ((mouseX - (center + 0.1 * bgDivWidth))) / ((0.8 * bgDivWidth) / 2);  // value 0-1
+                } else if (mouseX < center - (0.1 * bgDivWidth)) {  // left side
+                    speedX = ((mouseX - (center - 0.1 * bgDivWidth))) / ((0.8 * bgDivWidth) / 2);  // value 0-1
+                }
+
+                var newBgPos = parseInt(bgDivImg.style.left) - (speedX * speedMult);    // check if new pos will overscroll
+                if ((-newBgPos + bgDivWidth) > bgDivImg.width) {    
+                    bgDivImg.style.left = -(bgDivImg.width - bgDivWidth) + 'px';    // overscroll right
+                } else if (newBgPos >= 0) {
+                    bgDivImg.style.left = 0 + 'px'; // overscroll left
+                } else {
+                    bgDivImg.style.left = newBgPos + 'px';  // where we actually move the image
+                }
+                vwClip.style.left = bgDivImg.width * 0.695 + parseInt(bgDivImg.style.left) + 'px';  // move vw's hitbox
+            };
+        };
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+:root {
+    --pad: 20px;
+    --mainRatio: 48;
+}
+
+body {
+    background-color: rgb(124, 116, 109);
+    /* background-color: black; */
+    margin: auto;  /* external */
+    border-collapse: collapse;
+    font-size: 20px;
+    font-family: serif;
+}
+
+.mainBlock{
+    position: absolute;
+    background-color: rgb(124, 116, 109);
+    /* background-color: black; */
+}
+
+@media only screen and (min-height: 48vw) {
+    .mainBlock {
+        width: calc(100vw - var(--pad) * 2);
+        height: calc(var(--mainRatio) * 1vw - var(--pad) * 2);
+        top: calc(50vh - var(--mainRatio) * 0.5vw + var(--pad));
+        left: var(--pad);
+    }
+}
+@media only screen and (max-height: 48vw) {
+    .mainBlock {
+        height: calc(100vh - var(--pad) * 2);
+        width: calc(10000vh / var(--mainRatio) - var(--pad) * 2);
+        top: var(--pad);
+        left: calc(50vw - 5000vh / var(--mainRatio) + var(--pad));
+    }
+} 
+
+.dinnerClip {
+	position: absolute;
+	clip-path: url(#dinnerClipSvg);
+	cursor: pointer;
+	/* background-color: blue; */
+    /* opacity: 50%; */
+    z-index: 2;
+	width: 44%;
+    aspect-ratio: 1;
+    right: 4%;
+    bottom: 1.5%;
+}
+
+.mainImg {
+    position: absolute;
+    width: 50%;
+    opacity: 100%;
+    right: 0%;
+    bottom: 1%;
+}
+
+.mainImg2 {
+    position: absolute;
+    width: 80%;
+    opacity: 100%;
+    right: 0%;
+    bottom: 1%;
+}
+
+/* ARROWS */
+.leftHandImg{
+    position: absolute;
+    width: 40px;
+    top: 20px;
+}
+.leftHandImg:hover {
+    cursor: pointer;
+} 

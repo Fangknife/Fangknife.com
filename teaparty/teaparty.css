@@ -1,0 +1,139 @@
+:root {
+    --pad: 20px;
+    --mainRatio: 80;
+}
+
+body {
+    background-color: black;
+    margin: auto;  /* external */
+    border-collapse: collapse;
+}
+.mainBlock{
+    position: absolute;
+}
+@media only screen and (min-height: 80vw) {
+    .mainBlock {
+        width: calc(100vw - var(--pad) * 2);
+        height: calc(var(--mainRatio) * 1vw - var(--pad) * 2);
+        top: calc(50vh - var(--mainRatio) * 0.5vw + var(--pad));
+        left: var(--pad);
+    }
+}
+@media only screen and (max-height: 80vw) {
+    .mainBlock {
+        height: calc(100vh - var(--pad) * 2);
+        width: calc(10000vh / var(--mainRatio) - var(--pad) * 2);
+        top: var(--pad);
+        left: calc(50vw - 5000vh / var(--mainRatio) + var(--pad));
+    }
+} 
+.mainImg {
+    position: absolute;
+    width: 100%;
+    left: 0%;
+    top: 0%;
+}
+/* text boxes vvv */
+/* MAIN TEXT BOX */
+@font-face { 
+	font-family: "pixelFont"; 
+	src: url('./ASSET/yoster.ttf'); 
+}
+
+.textBox {
+    position: absolute;
+    width: calc(96% - var(--pad));
+    height: 17%;
+    left: 2%;
+    bottom: 3%;
+    z-index: 4;
+    display: flex;
+    align-items: center;
+    color: black;
+    font-family: "pixelFont";
+}
+.textBoxImg {
+    position: absolute;
+    width: 100%;
+    left: 0%;
+    bottom: 3%;
+}
+/* SMALL TEXT BOX, DUAL */
+.textBoxSmall {
+    position: absolute;
+    width: 40%;
+    height: 16%;
+    bottom: 5%;
+    z-index: 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-family: "pixelFont";
+}
+.textBoxSmallImg{
+    position: absolute;
+    width: 40%;
+    bottom: 5%;
+}
+.xBox {
+    position: absolute;
+    z-index: 4;
+    color: #886962;
+    font-family: "pixelFont";
+}
+.xBox:hover {
+    cursor: pointer;
+    color:  white;
+    transform: translate(0, -2px);
+    filter:drop-shadow(2px 2px 0px black);
+}
+@media only screen and (min-height: 100vw) {
+    .textBox {
+        font-size: 5vw;
+    }
+    .textBoxSmall {
+        font-size: 8vw;
+    }
+    .xBox {
+        font-size: 5vw;
+    }
+}
+@media only screen and (max-height: 100vw) {
+    .textBox {
+        font-size: 5vh;
+    }
+    .textBoxSmall {
+        font-size: 8vh;
+    }
+    .xBox{
+        font-size: 5vh;
+    }
+}
+.textBoxSmall:hover {
+    cursor: pointer;
+    animation-name: floating;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}  
+@keyframes floating {
+    0% { transform: translate(0,  0px); 
+        filter:drop-shadow(2px 1px 0px #886962);}
+    50%  { transform: translate(0, -4px); 
+        filter:drop-shadow(2px 4px 0px #886962);}
+    100%   { transform: translate(0, 0px); 
+        filter:drop-shadow(2px 1px 0px #886962);}
+}
+/* text boxes ^^^ */
+
+/* arrow buttons vvv */
+.nextButton {
+    position: absolute;
+    width: 3.5%;
+    right: 1%;
+}
+.nextButton:hover {
+    cursor: pointer;
+}
+
