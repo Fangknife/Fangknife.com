@@ -1,0 +1,40 @@
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 25px;
+    /* background-color: rgba(137, 43, 226, 0.2); */
+}
+.player_container {
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.main_img {
+    position: relative;
+    top: 0px;
+    width: 100%;
+    border: none;
+}
+figure {
+    justify-self: center;
+    justify-content: center;
+    text-align: center;
+    max-width: 1000px;
+    max-height: 900px;
+} 
+figure .description_img{
+    margin-bottom: 5px;
+}
+.description_img {
+    display: flex;
+    width: 100%;
+}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+.main_description figcaption {
+    width: 100%;
+    max-width: 1000px;
+    max-height: 900px;
+    font-size: 14px;
+    color: var(--dark_text_color);
+}
